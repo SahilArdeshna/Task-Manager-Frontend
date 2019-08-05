@@ -1,0 +1,403 @@
+/* LOGIN PAGE STYLE */
+
+/* BODY */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    line-height: 1.4;
+    color: #333333;
+    font-family: Helvetica, Arial, sans-serif;
+} 
+
+input {
+    padding: 10px;
+    margin: 5px 0px 10px 0px;
+    font-size: 14px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 8px;        
+}
+
+button {
+    padding: 10px 5px 10px 5px;
+    margin-top: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    border: 0px;
+    transition: .3s ease;
+    display: inline-block;
+    outline: none;
+}
+
+button:hover {
+    background: #1E8BC3;
+}
+
+button:disabled {
+    cursor: default;
+    background: #8bb1c0da;
+}
+
+/* FORM STYLE */
+.section {
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-section {
+    box-shadow: 0px 0px 15px 0px #1D1F26;
+    align-items: center;
+    padding: 25px;
+    width: 250px;
+    height: 320px;
+}
+
+.form input {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form button {
+    width: 100%;
+}
+
+.error-message {
+    font-size: 13px;
+    margin-top: 9px;
+    color: red;   
+}
+
+/* SIGNUP */
+.signup {
+    margin-top: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup label {
+    margin-right: 15px;
+}
+
+.signup button {
+    width: 70px;
+}
+
+
+/* TODO PAGE STYLE */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ADD TASK STYLE */
+.addTask {
+    display: flex;
+    height: 45%;    
+    justify-content: center;
+    align-items: center; 
+    
+}
+
+.addTask-section {      
+    margin-top: 20px; 
+    display: flex;
+    justify-content: center;
+    transform: translateX(-60%);
+    box-shadow: 0px 0px 15px 0px #1D1F26;
+    align-items: center;
+    padding: 25px;
+    width: 225px;
+    height: 250px;    
+}
+
+.addTask button {
+    padding: 12px;
+}
+
+.logout button {
+    overflow: auto;
+    margin-top: 25px;
+    transform: translate(19vw, -17vh);
+}
+
+.dropdown {
+    margin left: 10px;
+    margin-top: 25px;
+    transform: translate(21vw, -18.2vh);
+}
+
+/* SHOW TASK STYLE */
+
+.showTask {
+    height: 50vh;
+    position: absolute;
+}
+
+.table {
+    width: 790px;
+    height: 240;
+    margin: 20px 0px 0px 0px;
+    transform: translate(70px, 50px);    
+}
+
+.table table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 6px;   
+}
+
+.table th {
+    background-color: #f1f1c1;
+    padding: 7px;
+}
+
+.table td {
+    width: auto;   
+}
+
+.table th:nth-last-child(1) {
+    display: none;
+}
+
+.table th:nth-last-child(2), td:nth-last-child(2) {
+    display: none;
+}
+
+.table td:nth-last-child(3) {
+    display: none;
+}
+
+.row:last-child {
+    border: none;
+}
+
+/* SIGNUP SECTION */
+
+.signup-section {
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-signup {
+    width: 250px;
+    height: 315px;
+    box-shadow: 0px 0px 15px 0px #1D1F26;
+    padding: 25px;
+    align-items: center;
+}
+
+.form-signup input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-signup label {
+    margin-bottom: 5px;
+}
+
+.form-signup button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* TASK EDIT BUTTON */
+
+.taskEditBtn {
+    display: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.taskEditBtn button {
+    padding: 5px;
+    margin: 0px;
+    font-size: 13px;
+}
+
+.editTaskBtn:hover {
+    color: yellow;
+    background: #1E8BC3;
+}
+
+.deleteTaskBtn:hover {    
+    color: rgb(177, 46, 57);
+    background: #1E8BC3;
+}
+
+.saveBtn {
+    display: none;    
+    background: #1E8BC3;
+}
+
+.saveBtn:hover {
+    color: white;
+}
+
+.inputEdit {
+    display: none;
+}
+
+.inputEdit input {
+    padding: 5px;
+    width: 95px;
+    justify-content: center;
+    align-items: center;
+    color: #333333;
+}
+
+.sortByBtn {
+    background-color: #f1f1c1;   
+    margin-left: 7px;
+    padding: 4px 4px 2px 4px;
+    font-size: 18px; 
+    font-style: bold; 
+}
+
+.sortByBtn:hover {        
+    color: white;
+    background: rgba(122, 189, 223, 0.959); 
+}
+
+/* DROP DOWN BUTTON */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown img {
+    height: 20px;
+    width: 20px;
+}
+
+.dropdown button {
+    padding: 0px;
+    background-color: white;
+}
+
+.dropdown button:hover {
+    background: white;
+}
+
+.dropdown-content button {
+    display: block;
+    width: 150px;
+    margin: 0px;    
+    padding: 10px;
+    text-align: left;
+    color: black;
+    transition: .3s ease;
+    font-size: 13px;
+}
+
+.dropdown-content button:hover {
+    background: rgba(122, 189, 223, 0.959);
+}
+
+.show {
+    display: block;
+}
+
+/* USER PROFILE */
+.profilePic {
+    height: 270px;
+    width: 170px;
+    margin-top: 120px;
+    transform: translate(21vw, -7vh);
+}
+
+.profilePic img {    
+    height: 170px;
+    width: 150px;
+}
+
+.profilePic input {
+    margin-left: -10px;
+    margin-bottom: 0;
+}
+
+.profilePic button {
+    padding: 9px;
+
+}
+
+.fileSelector {
+    display: none;
+}
+
+.upload {
+   display: none;
+}
+
+.userImg {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+/* PREV NEXT BUTTON */
+.prevBtn {
+    display: none;
+}
+
+.previous {
+    width: 85px;
+    display: inline-block;
+    border-radius: 10rem;
+    padding: 5px 15px 5px 10px;           
+    transform: translate(14vw, 10vh);   
+    position: absolute;
+}
+
+.previous img {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+.nextBtn {
+    display: none;
+}
+
+.next {
+    width: 85px;
+    display: inline-block;
+    border-radius: 10rem;
+    padding: 5px 10px 5px 15px;    
+    transform: translate(26vw, 10vh); 
+    position: absolute;
+}
+
+.next img {
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+}
