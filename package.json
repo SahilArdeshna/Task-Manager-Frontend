@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "mode production",
+    "build": "webpack-dev-server --mode production",
     "dev": "webpack-dev-server --mode development --open"
   },
   "author": "Sahil Ardeshna",
