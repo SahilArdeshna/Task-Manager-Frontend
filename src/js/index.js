@@ -4,6 +4,7 @@ import * as UpdateTask from './models/UpdateTask';
 import * as DeleteTask from './models/DeleteTask';
 import * as SortBy from './models/SortBy';
 import * as ProfileDropdown from './models/ProfileDropdown';
+import * as taskView from './views/taskView';
 
 // CHECK FOR TOKEN 
 export function checkToken() {
@@ -128,8 +129,8 @@ export const renderTable = (response) => {
             let resValue = Object.values(el);            
 
             // CONVERT UPDATEDAT AND CREATEDAT REGULAT TIME
-            const resValue3 = moment(resValue[3]).format('h:mm a D/MM/YY');
-            const resValue5 = moment(resValue[5]).format('h:mm a D/MM/YY');
+            const resValue3 = moment(resValue[3]).format('hh:mm a D/MM/YY');
+            const resValue5 = moment(resValue[5]).format('hh:mm a D/MM/YY');
 
             // CALL TABLE DATA FUNCTION
             tableData([num += 1, resValue[2] + editInput, resValue[0] + editInput, resValue3, resValue5, resValue[1], resValue[4], html]);
@@ -220,7 +221,7 @@ export const mouseEvent = () => {
 
             el.children[1].innerHTML = updateTaskRes.data.description + editInput; // update cell 2(description) value
             el.children[2].innerHTML = updateTaskRes.data.completed + editInput; // update cell 3(completed) value
-            el.children[4].innerHTML = moment(new Date().getTime()).format('h:mm a D/MM/YY'); // update upadateAt cell
+            el.children[4].innerHTML = moment(new Date().getTime()).format('hh:mm a D/MM/YY'); // update upadateAt cell
 
             el.children[7].children[0].children[0].style.display = 'inline-block'; // editTaskBtn unhide
             el.children[7].children[0].children[1].style.display = 'inline-block'; // deleteTaskBtn unhide
@@ -279,13 +280,16 @@ export const sortBy = async () => {
 // PAGINATION
 export const sortByAndPagination = async (resLength) => {   
     const prev = document.querySelector('.previous');
-    const next = document.querySelector('.next');            
+    const next = document.querySelector('.next');  
 
     prev.addEventListener('click', async (e) => {
         e.preventDefault();
         
         sum = sum - 5;
-        await SortBy.sortByAndPage(undefined, resLength, sum);        
+
+        const length = await taskView.getTask();
+
+        await SortBy.sortByAndPage(undefined, length, sum);
 
         if (sum <= 0) {
             document.querySelector('.prevBtn').style.display = 'none';
@@ -296,7 +300,10 @@ export const sortByAndPagination = async (resLength) => {
         e.preventDefault();
 
         sum = sum + 5;
-        await SortBy.sortByAndPage(undefined, resLength, sum);
+
+        const length = await taskView.getTask();
+        
+        await SortBy.sortByAndPage(undefined, length, sum);
 
         if (sum >= 5) {
             document.querySelector('.prevBtn').style.display = 'block';

@@ -3,7 +3,7 @@ import * as source from '..';
 
 export const removeProfilePic = async () => {
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.delete(`${proxy}http://ardeshna-task-manager.herokuapp.com/users/me/avatar`, {
+    const response = await axios.delete(`${proxy}http://sahil-task-manager.herokuapp.com/users/me/avatar`, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': window.localStorage.getItem('token')

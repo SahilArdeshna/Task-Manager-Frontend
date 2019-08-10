@@ -7,7 +7,7 @@
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development --open",
     "start": "node app.js",
-    "prod": "nodemon app.js webpack-dev-server --mode production"
+    "prod": "nodemon app.js"
   },
   "author": "Sahil Ardeshna",
   "license": "ISC",

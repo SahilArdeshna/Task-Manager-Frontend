@@ -219,6 +219,11 @@ button:disabled {
     margin-top: 5px;
 }
 
+.add__task {
+    width: 100%;
+    align-items: center;
+}
+
 /* TASK EDIT BUTTON */
 
 .taskEditBtn {

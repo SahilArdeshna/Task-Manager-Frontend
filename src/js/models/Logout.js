@@ -5,7 +5,7 @@ import * as source from '..';
 export const logout = async () => { 
     
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.post(`${proxy}http://ardeshna-task-manager.herokuapp.com/users/logout`, {}, {
+    const response = await axios.post(`${proxy}http://sahil-task-manager.herokuapp.com/users/logout`, {}, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json;charset=UTF-8',

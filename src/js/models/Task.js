@@ -1,10 +1,11 @@
 import axios from 'axios';
-import * as source from '..';
+import * as source from '../';
 import * as taskView from '../views/taskView';
+import * as SortBy from './SortBy';
 
 export const userTask = async (taskInput, taskValue) => {
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.post(`${proxy}https://ardeshna-task-manager.herokuapp.com/tasks`, {
+    const response = await axios.post(`${proxy}https://sahil-task-manager.herokuapp.com/tasks`, {
         description: taskInput,
         completed: taskValue,
         createdAt: new Date().getTime()
@@ -17,12 +18,12 @@ export const userTask = async (taskInput, taskValue) => {
     });
 
     if (response) {
-        
-        // remove rows
-        source.removeRow(); 
 
         // get the task
-        taskView.getTask();
+        const length = await taskView.getTask();
+
+        // call pagination when page load
+        SortBy.sortByAndPage(undefined, length, 0); 
 
         // hide next and prev button
         document.querySelector('.prevBtn').style.display = 'none';

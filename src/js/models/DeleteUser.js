@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const deleteUser = async () => {
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.delete(`${proxy}http://ardeshna-task-manager.herokuapp.com/users/me`, {
+    const response = await axios.delete(`${proxy}http://sahil-task-manager.herokuapp.com//users/me`, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': window.localStorage.getItem('token')

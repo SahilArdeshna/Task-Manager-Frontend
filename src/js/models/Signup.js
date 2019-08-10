@@ -3,7 +3,7 @@ import * as source from '..';
 
 const createUser = async (obj, headers) => {
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.post(`${proxy}http://ardeshna-task-manager.herokuapp.com/users`, {
+    const response = await axios.post(`${proxy}http://sahil-task-manager.herokuapp.com/users`, {
         name: obj.name,
         email: obj.email,
         password: obj.password

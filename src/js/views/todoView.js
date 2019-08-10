@@ -4,6 +4,7 @@ import * as taskView from './taskView';
 import * as Task from '../models/Task';
 import * as source from '..';
 import * as ProfileDropdown from '../models/ProfileDropdown';
+import * as SortBy from '../models/SortBy';
 
 // TASKAPP PAGE
 export const renderTodoPage = async () => {
@@ -13,9 +14,9 @@ export const renderTodoPage = async () => {
                 <div class="addTask-section">
                     <form class="taskForm">
                         <lable>Description</lable>
-                        <input class="task-input" type="text" placeholder="Description">
+                        <input class="task-input" type="text" placeholder="description">
                         <label>Completed</label>
-                        <input class="task-value" type="text" placeholder="Completed"> 
+                        <input class="task-value" type="text" placeholder="true/false"> 
                         <button class="add__task" type="submit">Add</button>
                     </form>
                 </div> 
@@ -116,6 +117,9 @@ export const renderTodoPage = async () => {
 
     // RENDER TASKS IN TABLE
     const length = await taskView.getTask();
+
+    SortBy.sortByAndPage(undefined, length, 0);
+
     source.sortByAndPagination(length);
 
     // ADD TASK
@@ -124,11 +128,16 @@ export const renderTodoPage = async () => {
     addTask.addEventListener('click', async (e) => {
         e.preventDefault();
 
-        const taskInput = document.querySelector('.task-input').value; // FORM DESCRIPTION VALUE
-        const taskValue = document.querySelector('.task-value').value; // FORM COMPLETED VALUE
+        const taskInput = document.querySelector('.task-input'); // FORM DESCRIPTION VALUE
+        const taskValue = document.querySelector('.task-value'); // FORM COMPLETED VALUE
 
         if (taskInput && taskValue) {
-            await Task.userTask(taskInput, taskValue);
+
+            await Task.userTask(taskInput.value, taskValue.value);
+            
+            taskInput.value = '';
+            taskValue.value = '';
+            taskInput.focus();
 
             // Call gettask function
             await taskView.getTask();

@@ -4,7 +4,7 @@ import * as source from '..';
 // USER LOGIN
 const userLogin = async (email, password, headers) => {
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.post(`${proxy}http://ardeshna-task-manager.herokuapp.com/users/login`, {
+    const response = await axios.post(`${proxy}http://sahil-task-manager.herokuapp.com/users/login`, {
         email,
         password
     }, {
@@ -12,11 +12,9 @@ const userLogin = async (email, password, headers) => {
     });
     
     if (response) {
-        console.log(response);
-
+        
         // STORE UESR ID
         window.localStorage.setItem('userId', response.data.user._id);
-        console.log(window.localStorage.getItem('userId'));
 
         // STORE TOKEN
         window.localStorage.setItem('token', response.data.token); 
