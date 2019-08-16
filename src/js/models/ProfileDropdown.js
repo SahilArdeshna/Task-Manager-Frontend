@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as source from '..';
+import * as source from '../';
 
 export const removeProfilePic = async () => {
     const proxy = 'https://cors-anywhere.herokuapp.com/';
@@ -29,12 +29,11 @@ export const removeProfilePic = async () => {
 
 // UPLOAD AVATAR ON DATABASE
 export const uploadProfilePic = async (file) => {
-
     let data = new FormData();    
     data.append('avatar', file);
 
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.post(`${proxy}http://ardeshna-task-manager.herokuapp.com/users/me/avatar`, data , {
+    const response = await axios.post(`${proxy}http://sahil-task-manager.herokuapp.com/users/me/avatar`, data , {
         headers: {
             'Content-Type': 'multipart/form-data',
             'Access-Control-Allow-Origin': '*',            
@@ -58,7 +57,7 @@ export const uploadProfilePic = async (file) => {
 // GET AVATAR FROM DATABASE
 export const getProfilePic = async (id) => {
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.get(`${proxy}http://ardeshna-task-manager.herokuapp.com/users/${id}/avatar`, {
+    const response = await axios.get(`${proxy}http://sahil-task-manager.herokuapp.com/users/${id}/avatar`, {
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',

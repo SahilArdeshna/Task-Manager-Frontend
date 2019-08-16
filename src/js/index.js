@@ -359,7 +359,7 @@ export const addProfile = async (add) => {
 
 // UPLOAD PROFILE IMAGE
 export const uploadProfile = async (file) => {
-
+    
     // CALL UPLOADPROFILEPIC FUNCTION
     ProfileDropdown.uploadProfilePic(file);
 };
