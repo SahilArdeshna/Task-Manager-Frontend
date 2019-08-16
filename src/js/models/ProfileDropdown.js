@@ -3,7 +3,7 @@ import * as source from '../';
 
 export const removeProfilePic = async () => {
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.delete(`${proxy}http://sahil-task-manager.herokuapp.com/users/me/avatar`, {
+    const response = await axios.delete(`${proxy}https://sahil-task-manager.herokuapp.com/users/me/avatar`, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': window.localStorage.getItem('token')
@@ -33,7 +33,7 @@ export const uploadProfilePic = async (file) => {
     data.append('avatar', file);
 
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.post(`${proxy}http://sahil-task-manager.herokuapp.com/users/me/avatar`, data , {
+    const response = await axios.post(`${proxy}https://sahil-task-manager.herokuapp.com/users/me/avatar`, data , {
         headers: {
             'Content-Type': 'multipart/form-data',
             'Access-Control-Allow-Origin': '*',            
@@ -57,7 +57,7 @@ export const uploadProfilePic = async (file) => {
 // GET AVATAR FROM DATABASE
 export const getProfilePic = async (id) => {
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const response = await axios.get(`${proxy}http://sahil-task-manager.herokuapp.com/users/${id}/avatar`, {
+    const response = await axios.get(`${proxy}https://sahil-task-manager.herokuapp.com/users/${id}/avatar`, {
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
